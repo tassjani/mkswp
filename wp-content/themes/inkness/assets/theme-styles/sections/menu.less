@@ -1,0 +1,143 @@
+/* -------- Nav Menu ---------- */
+.nav-wrapper {
+  margin-bottom: 25px;
+}
+#site-navigation {
+  clear: both;
+  display: block;
+  display: inline-block;
+  background: @menu-bar-bg;
+  padding-bottom: 0px;
+  border: none;
+  margin-top: -15px;
+  text-align: center;
+  float: left;
+  .font-heading;
+  font-weight: lighter;
+  text-transform: uppercase;
+  ul {
+
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+    padding-bottom: 0px;
+    > li > a {
+      padding-bottom: 25px;
+      padding-top: 25px;
+    }
+    li:hover > ul { /* Dropdown*/
+      display: block;
+    }
+    ul {
+      display: none;
+      float: left;
+      position: absolute;
+      top: 5.0em;
+      left: 0;
+      z-index: 99999;
+      background: @menu-hover;
+      text-align: left;
+      border: none;
+      border-top: solid 3px #EFEFEF;
+      padding-top: 0px;
+      box-shadow: 0px 5px 4px -4px #4a4a4a;
+      ul {
+        left: 100%;
+        border: none;
+        top: 0;
+      }
+      a {
+        min-width: 200px;
+        max-width: 255px;
+        font-size: 14px;
+        font-weight: normal;
+        color: #555;
+        padding: 8px 20px;
+        &:hover {
+          border-bottom: none;
+          background: #333;
+          color: #eee;
+          padding: 8px 20px;
+        }
+      }
+    }
+  }
+  li {
+    position: relative;
+    clear: right;
+    float: left;
+  }
+  .nav .caret {
+    display: none;
+  }
+  a {
+    display: block;
+    text-decoration: none;
+    color: @menu-link-color;
+    text-decoration: none;
+    padding: 16px 10px;
+    font-weight: normal;
+    font-weight: lighter;
+    &:hover {
+      border-bottom: @link-color solid 2px;
+      background: none;
+      color: @link-color;
+    }
+  }
+  ul ul a {
+    border-bottom: none;
+    &:hover {
+      border-bottom: none;
+      background: none;
+    }
+  }
+  li:hover > a {
+    border-bottom: @link-color solid 2px;
+    padding-bottom: 23px;
+    color: @link-color;
+  }
+  ul ul li:hover > a {
+    background: @menu-bar-bg;
+    border-bottom: none;
+    padding: 8px 20px;
+    color: black;
+    border-top: none;
+  }
+
+}
+
+.mobile-menu {
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+  .menu-link {
+    padding: 10px;
+    font-size: 30px;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  #menu {
+    z-index: 999;
+    background: darken(@header-top-bg, 5%);
+    border-right: 2px solid @link-color;
+    ul {
+      margin: 0;
+      li {
+        list-style: none;
+        padding: 5px 0px;
+        a {
+          display: block;
+          color: @link-color;
+          padding: 10px 15px;
+          &:hover {
+            text-decoration: none;
+          }
+        }
+        ul {
+          background: @menu-hover;
+        }
+      }
+    }
+  }
+}
